@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Mim | Letflix</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .sobre-mim {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      padding: 2rem 5rem;
+      color: white;
+      background-image: url('https://i.pinimg.com/736x/db/6c/8f/db6c8f19ce36f60f0cb0453a29796f8b.jpg');
+      background-size: cover;
+      background-position: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .texto-sobre {
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .texto-sobre h4 {
+      font-weight: normal;
+      color: gray;
+      margin-bottom: 0.5rem;
+    }
+
+    .texto-sobre h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .texto-sobre .relevancia {
+      color: #76b467;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .texto-sobre p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .foto-sobre img {
+      width: 300px;
+      height: auto;
+      border: 2px solid white;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      margin: 2rem auto;
+      background-color: white;
+      color: black;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-voltar:hover {
+      background-color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .sobre-mim {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .texto-sobre {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="sobre-mim">
+    <div class="texto-sobre">
+      <h4>Letflix Original</h4>
+      <h2>SOBRE MIM</h2>
+      <div class="relevancia">100% Relevante &nbsp; • &nbsp; 2009 &nbsp; • &nbsp; 16 Temporadas</div>
+      <p>
+        Oi! Eu sou a Letícia, estudante de Informática no IFMA, que vive entre códigos, desenhos e páginas de livros.
+        Curto misturar tecnologia com criatividade e transformar ideias em projetos cheios de estilo.
+        Quando não estou na frente do computador, estou desenhando algo ou viajando nas histórias de um bom livro,
+        sempre com muito café e música boa pra acompanhar.
+      </p>
+    </div>
+    <div class="foto-sobre">
+      <img src="https://i.pinimg.com/736x/2d/68/3e/2d683eb4ef2834b68fa7ca9cf11e8d08.jpg" alt="Letícia Rodrigues" class="sobre-foto">
+    </div>
+  </section>
+
+  <!-- Botão fora da seção, centralizado -->
+  <div style="text-align: center;">
+    <a href="index.html" class="btn-voltar">Voltar ao Início</a>
+  </div>
+</body>
+</html>
