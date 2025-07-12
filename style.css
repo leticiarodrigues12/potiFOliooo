@@ -324,3 +324,20 @@ body {
     align-self: center;
   }
 }
+
+
+.lado-direito {
+  flex: 1;
+  position: relative;
+  background: url('https://i.pinimg.com/736x/55/96/44/5596443b4c52cd97eecbb381a5da80ae.jpg') no-repeat center center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.lado-direito::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Escurece a imagem */
+}
