@@ -16,11 +16,10 @@
     }
 
     .especialidades {
-      padding: 4rem 2rem 2rem 2rem;
+      padding: 4rem 5rem;
       max-width: 700px;
       text-align: left;
-      margin-left: 40px; /* alinhado com botão */
-      margin-top: 20px;
+      margin: 0 auto;
     }
 
     .especialidades h4 {
@@ -31,14 +30,6 @@
     .especialidades h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-    }
-
-    .descricao {
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      color: #ddd;
-      max-width: 650px;
     }
 
     .relevancia {
@@ -93,10 +84,9 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       display: inline-block;
       margin-top: 2rem;
-      position: fixed;
+      position: absolute;
       left: 40px;
       bottom: 40px;
-      z-index: 100;
     }
 
     .btn-voltar:hover {
@@ -106,17 +96,14 @@
     @media (max-width: 768px) {
       .especialidades {
         padding: 2rem;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
+        text-align: center;
       }
 
       .btn-voltar {
-        position: fixed;
-        left: 50%;
-        bottom: 20px;
-        transform: translateX(-50%);
-        margin: 0;
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
       }
     }
   </style>
@@ -126,15 +113,6 @@
     <h4>Letflix Original</h4>
     <h2>ESPECIALIDADES</h2>
     <div class="relevancia">100% Relevante • 2024 • 2 Temporadas</div>
-
-  <p class="descricao">
-    Apaixonada por tecnologia e inovação, tenho foco no desenvolvimento de soluções práticas e eficientes. Possuo habilidades em Python, Java, hardware e desenvolvimento web, sempre buscando aprender mais e aplicar criatividade nos projetos para gerar resultados relevantes.
-  </p>
-
-  <!-- barras de habilidade aqui -->
-
-    <a href="index.html" class="btn-voltar">Voltar ao Início</a>
-  </div>
 
     <div class="skill python">
       <p>Python</p>
