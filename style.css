@@ -258,3 +258,13 @@ body {
   position: relative;
   z-index: 2;
 }
+
+<section class="sobre-mim">
+  <div class="texto-sobre">
+    <h2>SOBRE MIM</h2>
+    <p>Oi! Eu sou a Letícia...</p>
+  </div>
+  <div class="foto-sobre">
+    <img src="sua-imagem.jpg" alt="Letícia" />
+  </div>
+</section>
