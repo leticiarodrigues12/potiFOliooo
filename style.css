@@ -323,3 +323,16 @@ body {
     font-size: 1rem;
   }
 }
+
+.projetos {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 100%),
+  url('https://i.pinimg.com/736x/3d/3f/27/3d3f274c4ce6352ac4c911ddf869b1da.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
