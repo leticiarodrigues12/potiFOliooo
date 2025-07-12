@@ -7,26 +7,32 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
       background-color: black;
       color: white;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-image: url('https://i.pinimg.com/736x/55/96/44/5596443b4c52cd97eecbb381a5da80ae.jpg');
-      min-height: 100vh;
     }
 
-    .contato {
-      padding: 4rem 5rem 2rem 5rem;
-      text-align: left;
+    .secao-contato {
+      display: flex;
+      height: 100vh;
     }
 
-    .contato h4 {
+    .lado-esquerdo {
+      flex: 1;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    .lado-esquerdo h4 {
       color: gray;
       margin-bottom: 0.5rem;
     }
 
-    .contato h2 {
+    .lado-esquerdo h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
@@ -37,7 +43,7 @@
       font-weight: bold;
     }
 
-    .contato p {
+    .lado-esquerdo p {
       line-height: 1.7;
     }
 
@@ -60,25 +66,42 @@
       background-color: #ddd;
     }
 
+    .lado-direito {
+      flex: 1;
+      background: url('https://i.pinimg.com/736x/55/96/44/5596443b4c52cd97eecbb381a5da80ae.jpg') no-repeat center center/cover;
+    }
+
     @media (max-width: 768px) {
-      .contato {
-        padding: 2rem;
+      .secao-contato {
+        flex-direction: column;
+      }
+
+      .lado-esquerdo, .lado-direito {
+        width: 100%;
+        height: auto;
+      }
+
+      .lado-direito {
+        height: 300px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="contato">
-    <h4>Letflix Original</h4>
-    <h2>CONTATOS</h2>
-    <div class="relevancia">100% Relevante • 2025 • 1 Temporadas</div>
-    <p>
-      Caso queira entrar em contato, estou disponível pelo e-mail ou pelo número de telefone abaixo!
-      <br><br>
-      <strong>E-mail:</strong> r.alcantara@acad.ifma.edu.br <br>
-      <strong>Telefone:</strong> (99) 9167-5315
-    </p>
-    <a href="index.html" class="btn-voltar">Voltar ao Início</a>
-  </div>
+  <section class="secao-contato">
+    <div class="lado-esquerdo">
+      <h4>Letflix Original</h4>
+      <h2>CONTATOS</h2>
+      <div class="relevancia">100% Relevante • 2025 • 1 Temporada</div>
+      <p>
+        Caso queira entrar em contato, estou disponível pelo e-mail ou pelo número de telefone abaixo!
+        <br><br>
+        <strong>E-mail:</strong> r.alcantara@acad.ifma.edu.br <br>
+        <strong>Telefone:</strong> (99) 9167-5315
+      </p>
+      <a href="index.html" class="btn-voltar">Voltar ao Início</a>
+    </div>
+    <div class="lado-direito"></div>
+  </section>
 </body>
 </html>
