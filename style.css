@@ -228,3 +228,12 @@ body {
 .texto-sobre {
   text-align: center;
 }
+
+.sobre-mim {
+  height: 100vh;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85) 35%, rgba(0, 0, 0, 0) 65%), url('URL-DA-SUA-IMAGEM');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 2rem 5rem;
+}
