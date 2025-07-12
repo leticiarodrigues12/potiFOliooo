@@ -8,7 +8,7 @@ body {
   background-color: #000;
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  padding-top: 5rem; /* Reduzido de 7rem para 5rem */
+  padding-top: 5rem;
 }
 
 /* Animação estilo Netflix */
@@ -83,10 +83,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Subiu o conteúdo */
-  min-height: calc(100vh - 5rem); /* Ajustado */
+  justify-content: flex-start;
+  min-height: calc(100vh - 5rem);
   padding: 2rem 2rem 3rem;
   text-align: center;
+  margin-top: -3rem;
 }
 
 .pergunta {
