@@ -243,28 +243,3 @@ body {
   overflow: hidden;
 }
 
-.sobre-mim::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 40%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-}
-
-.texto-sobre, .foto-sobre {
-  position: relative;
-  z-index: 2;
-}
-
-<section class="sobre-mim">
-  <div class="texto-sobre">
-    <h2>SOBRE MIM</h2>
-    <p>Oi! Eu sou a Letícia...</p>
-  </div>
-  <div class="foto-sobre">
-    <img src="sua-imagem.jpg" alt="Letícia" />
-  </div>
-</section>
