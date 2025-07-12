@@ -8,6 +8,37 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
   <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    /* Animação de introdução */
+    .intro-animation {
+      position: fixed;
+      inset: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      transition: opacity 1s ease;
+    }
+
+    .logo-animation {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #e50914;
+      animation: fadeZoom 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeZoom {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
     /* Loader estilo Netflix */
     .loading-screen {
       position: fixed;
@@ -44,33 +75,125 @@
       font-size: 1.2rem;
     }
 
-    /* Ajuste para exibir a frase corretamente */
-    .conteudo {
-      padding-top: 9rem; /* Aumentado para empurrar abaixo do cabeçalho */
+    /* Cabeçalho */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background-color: #141414;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      flex-wrap: wrap;
     }
 
-    .pergunta {
-      font-size: 1.6rem;
+    .logo-texto {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e50914;
+    }
+
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .nav-bar a {
       color: white;
-      margin: 2rem 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-bar a:hover {
+      color: #e50914;
+    }
+
+    /* Conteúdo principal */
+    .conteudo {
+      padding: 8rem 2rem 4rem;
       text-align: center;
     }
 
-    /* Zoom na imagem do card ao clicar */
+    .pergunta {
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card-container {
+      background-color: #222;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .card-container:hover {
+      transform: scale(1.05);
+    }
+
+    .card-img {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease;
+    }
+
     .card-img.zoomed {
       transform: scale(1.2);
-      transition: transform 0.3s ease;
+    }
+
+    .card-label {
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .plus {
+      font-size: 3rem;
+      color: gray;
+      padding-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .conteudo {
+        padding-top: 7rem;
+      }
+
+      .card-img {
+        height: 200px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Animação estilo Netflix -->
+  <!-- Intro estilo Netflix -->
   <div id="intro-animation" class="intro-animation">
     <span class="logo-animation">Letflix</span>
   </div>
 
-  <!-- Tela de carregamento estilo Netflix -->
+  <!-- Tela de carregamento -->
   <div id="loading-screen" class="loading-screen">
     <div class="loader"></div>
     <p>Carregando...</p>
@@ -120,8 +243,8 @@
     </section>
   </main>
 
+  <!-- JS de transição -->
   <script>
-    // Tela de loading ao clicar nos cards
     window.addEventListener("load", () => {
       const intro = document.getElementById('intro-animation');
       setTimeout(() => {
@@ -134,12 +257,12 @@
           e.preventDefault();
           const url = card.getAttribute('data-link');
           const loading = document.getElementById('loading-screen');
-          card.querySelector('.card-img')?.classList.add('zoomed'); // anima puxar pra frente
+          card.querySelector('.card-img')?.classList.add('zoomed');
 
           setTimeout(() => {
             loading.style.opacity = '1';
             loading.style.pointerEvents = 'auto';
-          }, 300); // depois da animação do zoom
+          }, 300);
 
           setTimeout(() => {
             window.location.href = url;
