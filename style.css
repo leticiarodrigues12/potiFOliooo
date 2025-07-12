@@ -319,3 +319,15 @@ body {
     align-self: center;
   }
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  max-width: 100vw; /* ← ESSA LINHA RESOLVE DE VERDADE */
+}
