@@ -15,10 +15,17 @@
     }
 
     .projetos {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 100%),
+      url('https://i.pinimg.com/736x/3d/3f/27/3d3f274c4ce6352ac4c911ddf869b1da.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
       padding: 4rem 5rem 2rem 5rem;
       text-align: left;
       max-width: 1200px;
       margin: 0 auto;
+      display: flex;
+      align-items: center;
     }
 
     .texto-projeto h4 {
@@ -88,6 +95,7 @@
       scrollbar-width: thin;
       scrollbar-color: #76b467 transparent;
     }
+
     /* Chrome, Edge, Safari */
     .lista-projetos::-webkit-scrollbar {
       height: 8px;
@@ -101,7 +109,7 @@
     }
 
     .card-projeto {
-      flex: 0 0 auto; /* não encolhe, largura fixa */
+      flex: 0 0 auto;
       width: 180px;
       height: 270px;
       border-radius: 12px;
@@ -137,6 +145,7 @@
       .projetos {
         padding: 2rem 2rem 1rem 2rem;
         text-align: center;
+        flex-direction: column;
       }
 
       .texto-projeto h2 {
@@ -162,7 +171,6 @@
         display: inline-block;
       }
 
-      /* Cards um pouco menores no mobile */
       .card-projeto {
         width: 140px;
         height: 210px;
