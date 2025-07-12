@@ -5,29 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projetos | Letflix</title>
   <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: 'Poppins', sans-serif;
+    /* Reset básico */
+    * {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      box-sizing: border-box;
     }
 
-    .projetos {
-      padding: 4rem 5rem 2rem 5rem;
-      text-align: left;
-      max-width: 1200px;
-      margin: 0 auto;
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background-color: black;
     }
 
-    .texto-projeto h4 {
+    .secao-projetos {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* Lado esquerdo: texto com fundo preto */
+    .lado-esquerdo {
+      flex: 1;
+      background-color: black;
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 700px;
+      overflow-y: auto; /* para permitir scroll se conteúdo crescer */
+    }
+
+    .lado-esquerdo h4 {
       color: gray;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
 
-    .texto-projeto h2 {
+    .lado-esquerdo h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
@@ -39,15 +55,14 @@
       font-size: 1.1rem;
     }
 
-    .texto-projeto p {
+    .lado-esquerdo p {
       font-size: 1.1rem;
       line-height: 1.6;
       max-width: 700px;
+      margin-bottom: 2rem;
     }
 
     .btn-voltar {
-      display: inline-block;
-      margin-top: 2rem;
       background-color: white;
       color: black;
       padding: 0.7rem 1.5rem;
@@ -58,28 +73,43 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      text-align: center;
+      width: fit-content;
+      max-width: 250px;
+      margin-top: auto;
     }
 
     .btn-voltar:hover {
       background-color: #ddd;
     }
 
+    /* Lado direito: imagem com gradiente */
+    .lado-direito {
+      flex: 1;
+      position: relative;
+      background: url('https://i.pinimg.com/736x/3d/3f/27/3d3f274c4ce6352ac4c911ddf869b1da.jpg') no-repeat center center/cover;
+    }
+
+    .lado-direito::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.8) 40%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* Populares (lista de projetos) fica abaixo do texto */
     .populares {
       margin-top: 3rem;
-      padding: 0 5rem;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 100%;
     }
 
     .populares h3 {
       margin-bottom: 1rem;
       font-weight: 600;
       font-size: 1.8rem;
+      color: white;
     }
 
-    /* Lista estilo carrossel horizontal */
     .lista-projetos {
       display: flex;
       gap: 1rem;
@@ -88,20 +118,22 @@
       scrollbar-width: thin;
       scrollbar-color: #76b467 transparent;
     }
-    /* Chrome, Edge, Safari */
+
     .lista-projetos::-webkit-scrollbar {
       height: 8px;
     }
+
     .lista-projetos::-webkit-scrollbar-thumb {
       background-color: #76b467;
       border-radius: 4px;
     }
+
     .lista-projetos::-webkit-scrollbar-track {
       background: transparent;
     }
 
     .card-projeto {
-      flex: 0 0 auto; /* não encolhe, largura fixa */
+      flex: 0 0 auto;
       width: 180px;
       height: 270px;
       border-radius: 12px;
@@ -131,82 +163,74 @@
       box-shadow: 0 8px 20px #76b467;
     }
 
-    /* RESPONSIVIDADE */
-
+    /* Responsividade */
     @media (max-width: 768px) {
-      .projetos {
-        padding: 2rem 2rem 1rem 2rem;
-        text-align: center;
+      .secao-projetos {
+        flex-direction: column;
+        height: auto;
       }
 
-      .texto-projeto h2 {
-        font-size: 2rem;
-      }
-
-      .texto-projeto p {
+      .lado-esquerdo, .lado-direito {
+        width: 100%;
         max-width: 100%;
-        font-size: 1rem;
+        height: auto;
+        padding: 2rem;
       }
 
-      .populares {
-        padding: 0 2rem;
-      }
-
-      .populares h3 {
-        font-size: 1.5rem;
+      .lado-direito {
+        height: 200px;
       }
 
       .btn-voltar {
-        margin-left: auto;
-        margin-right: auto;
-        display: inline-block;
-      }
-
-      /* Cards um pouco menores no mobile */
-      .card-projeto {
-        width: 140px;
-        height: 210px;
+        margin-top: 1rem;
+        width: 100%;
+        max-width: none;
+        text-align: center;
       }
     }
 
     @media (max-width: 400px) {
       .card-projeto {
-        width: 120px;
-        height: 180px;
+        width: 140px;
+        height: 210px;
       }
 
-      .texto-projeto h2 {
-        font-size: 1.6rem;
+      .lado-esquerdo h2 {
+        font-size: 2rem;
       }
 
-      .texto-projeto p {
-        font-size: 0.9rem;
+      .lado-esquerdo p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="projetos">
-    <div class="texto-projeto">
-      <h4>Letflix Original</h4>
-      <h2>PROJETOS</h2>
-      <div class="relevancia">100% Relevante • 2024 • 2 Temporadas</div>
-      <p>Nesta seção, você encontra alguns dos projetos que desenvolvi ao longo da minha jornada acadêmica e pessoal, como meu site e meu Trabalho de Conclusão de Curso (TCC). Espero que goste!</p>
+  <section class="secao-projetos">
+    <div class="lado-esquerdo">
+      <div class="texto-projeto">
+        <h4>Letflix Original</h4>
+        <h2>PROJETOS</h2>
+        <div class="relevancia">100% Relevante • 2024 • 2 Temporadas</div>
+        <p>Nesta seção, você encontra alguns dos projetos que desenvolvi ao longo da minha jornada acadêmica e pessoal, como meu site e meu Trabalho de Conclusão de Curso (TCC). Espero que goste!</p>
 
-      <a href="index.html" class="btn-voltar">Voltar ao Início</a>
+        <a href="index.html" class="btn-voltar">Voltar ao Início</a>
+      </div>
+
+      <div class="populares">
+        <h3>Populares na Letflix:</h3>
+        <div class="lista-projetos">
+          <a href="file:///C:/Users/lucas/OneDrive/%C3%81rea%20de%20Trabalho/site%20carlos.html" target="_blank" class="card-projeto" title="Site">
+            <img src="https://br.web.img2.acsta.net/medias/nmedia/18/91/33/59/20140728.jpg" alt="Site" />
+          </a>
+          <a href="https://drive.google.com/file/d/1U6kEwV4rngI24mueMex1WKEBEzKJu2OE/view" target="_blank" class="card-projeto" title="TCC">
+            <img src="https://i.pinimg.com/736x/cb/99/a1/cb99a1db190e30603b4488fd5d0b8e01.jpg" alt="TCC" />
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-  
-  <div class="populares">
-    <h3>Populares na Letflix:</h3>
-    <div class="lista-projetos">
-      <a href="file:///C:/Users/lucas/OneDrive/%C3%81rea%20de%20Trabalho/site%20carlos.html" target="_blank" class="card-projeto" title="Site">
-        <img src="https://br.web.img2.acsta.net/medias/nmedia/18/91/33/59/20140728.jpg" alt="Site" />
-      </a>
-      <a href="https://drive.google.com/file/d/1U6kEwV4rngI24mueMex1WKEBEzKJu2OE/view" target="_blank" class="card-projeto" title="TCC">
-        <img src="https://i.pinimg.com/736x/cb/99/a1/cb99a1db190e30603b4488fd5d0b8e01.jpg" alt="TCC" />
-      </a>
-    </div>
-  </div>
+
+    <div class="lado-direito"></div>
+  </section>
 </body>
 </html>
