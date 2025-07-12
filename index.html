@@ -44,6 +44,11 @@
       font-size: 1.2rem;
     }
 
+    /* Ajuste para exibir a frase corretamente */
+    .conteudo {
+      padding-top: 9rem; /* Aumentado para empurrar abaixo do cabeçalho */
+    }
+
     .pergunta {
       font-size: 1.6rem;
       color: white;
@@ -51,8 +56,10 @@
       text-align: center;
     }
 
-    .conteudo {
-      padding-top: 5rem;
+    /* Zoom na imagem do card ao clicar */
+    .card-img.zoomed {
+      transform: scale(1.2);
+      transition: transform 0.3s ease;
     }
   </style>
 </head>
@@ -141,14 +148,6 @@
       });
     });
   </script>
-
-  <style>
-    /* Zoom na imagem do card ao clicar */
-    .card-img.zoomed {
-      transform: scale(1.2);
-      transition: transform 0.3s ease;
-    }
-  </style>
 
 </body>
 </html>
