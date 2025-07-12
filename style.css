@@ -194,3 +194,82 @@ body {
     align-items: center;
   }
 }
+
+.secao-especialidades {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0;
+}
+
+.secao-especialidades .lado-esquerdo {
+  flex: 1;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.secao-especialidades .lado-esquerdo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.secao-especialidades .lado-esquerdo p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  max-width: 550px;
+}
+
+.secao-especialidades .lado-direito {
+  flex: 1;
+  position: relative;
+  background: url('https://i.pinimg.com/736x/75/54/bf/7554bffdd6d2fc2e87449e9fd235c1a1.jpg') no-repeat center center/cover;
+}
+
+.secao-especialidades .lado-direito::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, transparent 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .secao-especialidades .lado-esquerdo {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .secao-especialidades {
+    flex-direction: column;
+  }
+
+  .secao-especialidades .lado-esquerdo,
+  .secao-especialidades .lado-direito {
+    width: 100%;
+    height: auto;
+  }
+
+  .secao-especialidades .lado-direito {
+    height: 250px;
+  }
+
+  .secao-especialidades .lado-esquerdo {
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .secao-especialidades .lado-esquerdo h2 {
+    font-size: 2rem;
+  }
+
+  .secao-especialidades .lado-esquerdo p {
+    font-size: 1rem;
+  }
+}
