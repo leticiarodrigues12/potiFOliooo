@@ -230,10 +230,31 @@ body {
 }
 
 .sobre-mim {
+  position: relative;
   height: 100vh;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85) 35%, rgba(0, 0, 0, 0) 65%), url('https://i.pinimg.com/736x/db/6c/8f/db6c8f19ce36f60f0cb0453a29796f8b.jpg');
+  background-image: url('https://i.pinimg.com/736x/db/6c/8f/db6c8f19ce36f60f0cb0453a29796f8b.jpg');
   background-size: cover;
   background-position: center;
   color: white;
   padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.sobre-mim::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.texto-sobre, .foto-sobre {
+  position: relative;
+  z-index: 2;
 }
