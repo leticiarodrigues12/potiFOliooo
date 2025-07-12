@@ -12,7 +12,14 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      position: relative;
+
+      /* Fundo com gradiente preto para transparente + imagem */
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 100%), 
+        url('https://i.pinimg.com/736x/75/54/bf/7554bffdd6d2fc2e87449e9fd235c1a1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .especialidades {
@@ -21,6 +28,11 @@
       text-align: left;
       margin-left: 40px; /* alinhado com botão */
       margin-top: 20px;
+
+      /* Para garantir que o texto tenha fundo preto para melhor leitura */
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
     }
 
     .especialidades h4 {
@@ -109,6 +121,9 @@
         margin-left: auto;
         margin-right: auto;
         max-width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 0;
+        box-shadow: none;
       }
 
       .btn-voltar {
@@ -126,7 +141,6 @@
     <h4>Letflix Original</h4>
     <h2>ESPECIALIDADES</h2>
 
-    <!-- Texto adicional que você pediu -->
     <div class="relevancia">100% Relevante • 2024 • 2 Temporadas</div>
     
     <div class="descricao">
