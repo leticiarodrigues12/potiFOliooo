@@ -6,11 +6,50 @@
   <title>Letflix | Portfólio de Letícia</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    /* Estilo da tela de carregamento */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      user-select: none;
+    }
+
+    /* Para melhorar a experiência visual no carregamento */
+    .logo-animation {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.2em;
+      color: #e50914; /* vermelho Netflix */
+      text-shadow: 0 0 10px #e50914;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { opacity: 1; }
+      to { opacity: 0.6; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Animação estilo Netflix -->
   <div id="intro-animation" class="intro-animation">
+    <span class="logo-animation">Letflix</span>
+  </div>
+
+  <!-- Tela de carregamento ativada ao clicar nos cards -->
+  <div id="loading-screen">
     <span class="logo-animation">Letflix</span>
   </div>
 
@@ -31,22 +70,22 @@
     <h2 class="pergunta">O que você quer ver?</h2>
 
     <section class="cards">
-      <a href="sobre.html" class="card-container">
+      <a href="#" class="card-container" data-link="sobre.html">
         <div class="card-img" style="background-image: url('img/eleven.jpg');"></div>
         <p class="card-label">Sobre mim</p>
       </a>
 
-      <a href="especialidades.html" class="card-container">
+      <a href="#" class="card-container" data-link="especialidades.html">
         <div class="card-img" style="background-image: url('img/will.jpg');"></div>
         <p class="card-label">Especialidades</p>
       </a>
 
-      <a href="projetos.html" class="card-container">
+      <a href="#" class="card-container" data-link="projetos.html">
         <div class="card-img" style="background-image: url('img/mike.jpg');"></div>
         <p class="card-label">Projetos</p>
       </a>
 
-      <a href="contatos.html" class="card-container">
+      <a href="#" class="card-container" data-link="contatos.html">
         <div class="card-img" style="background-image: url('img/lucas.jpg');"></div>
         <p class="card-label">Contatos</p>
       </a>
@@ -59,12 +98,29 @@
   </main>
 
   <script>
+    // Tela de loading ao clicar nos cards
     window.addEventListener("load", () => {
       const intro = document.getElementById('intro-animation');
       setTimeout(() => {
         intro.style.opacity = '0';
         intro.style.pointerEvents = 'none';
       }, 2500);
+
+      // Captura todos os cards com data-link
+      document.querySelectorAll('.card-container[data-link]').forEach(card => {
+        card.addEventListener('click', e => {
+          e.preventDefault();
+          const url = card.getAttribute('data-link');
+          const loading = document.getElementById('loading-screen');
+          loading.style.opacity = '1';
+          loading.style.pointerEvents = 'auto';
+
+          // Aguarda 1.5s e navega para a página
+          setTimeout(() => {
+            window.location.href = url;
+          }, 1500);
+        });
+      });
     });
   </script>
 
