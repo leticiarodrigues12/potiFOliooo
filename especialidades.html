@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Especialidades | Letflix</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       background-color: black;
@@ -12,14 +11,15 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url('');
       min-height: 100vh;
+      position: relative;
     }
 
     .especialidades {
       padding: 4rem 5rem;
       max-width: 700px;
       text-align: left;
+      margin: 0 auto;
     }
 
     .especialidades h4 {
@@ -39,36 +39,39 @@
     }
 
     .skill {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .skill p {
       margin: 0 0 0.5rem;
+      font-weight: 500;
+      font-size: 1.1rem;
     }
 
     .barra {
       width: 100%;
-      height: 15px;
+      height: 18px;
       background-color: #444;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
     }
 
     .barra-preenchida {
       height: 100%;
-      background-color: red;
+      background: linear-gradient(90deg, #ff4e50, #f9d423);
+      border-radius: 12px;
+      width: 0;
+      transition: width 1.2s ease;
     }
 
-    /* Percentual de preenchimento */
+    /* Percentuais */
     .python .barra-preenchida { width: 90%; }
     .java .barra-preenchida { width: 75%; }
     .hardware .barra-preenchida { width: 65%; }
     .web .barra-preenchida { width: 80%; }
 
     .btn-voltar {
-      position: absolute;
-      bottom: 40px;
-      left: 40px;
       background-color: white;
       color: black;
       padding: 0.7rem 1.5rem;
@@ -79,6 +82,11 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      margin-top: 2rem;
+      position: absolute;
+      left: 40px;
+      bottom: 40px;
     }
 
     .btn-voltar:hover {
@@ -88,11 +96,14 @@
     @media (max-width: 768px) {
       .especialidades {
         padding: 2rem;
+        text-align: center;
       }
 
       .btn-voltar {
-        left: 50%;
-        transform: translateX(-50%);
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
       }
     }
   </style>
@@ -130,8 +141,8 @@
         <div class="barra-preenchida"></div>
       </div>
     </div>
-  </div>
 
-  <a href="index.html" class="btn-voltar">Voltar ao Início</a>
+    <a href="index.html" class="btn-voltar">Voltar ao Início</a>
+  </div>
 </body>
 </html>
