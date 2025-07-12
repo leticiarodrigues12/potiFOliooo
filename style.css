@@ -243,6 +243,7 @@ body {
   overflow: hidden;
 }
 
+
 .secao-contato {
   display: flex;
   height: 100vh;
@@ -290,6 +291,7 @@ body {
   text-decoration: none;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  align-self: flex-start; /* Botão alinhado com o texto */
 }
 
 .btn-voltar:hover {
@@ -298,7 +300,10 @@ body {
 
 .lado-direito {
   flex: 1;
-  background: url('https://i.pinimg.com/736x/55/96/44/5596443b4c52cd97eecbb381a5da80ae.jpg') no-repeat center center/cover;
+  background: url('https://i.pinimg.com/736x/55/96/44/5596443b4c52cd97eecbb381a5da80ae.jpg') no-repeat center center/contain;
+  background-size: 80%; /* Diminui o tamanho da imagem */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media (max-width: 768px) {
@@ -313,5 +318,9 @@ body {
 
   .lado-direito {
     height: 300px;
+  }
+
+  .btn-voltar {
+    align-self: center;
   }
 }
