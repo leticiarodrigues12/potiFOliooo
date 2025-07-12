@@ -6,9 +6,13 @@
   <title>Especialidades | Letflix</title>
   <style>
     html, body {
-      overflow-x: hidden;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -22,6 +26,8 @@
       display: flex;
       width: 100%;
       height: 100vh;
+      max-width: 100vw;
+      overflow: hidden;
     }
 
     .lado-esquerdo {
@@ -31,7 +37,6 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      margin-left: 40px;
       overflow-y: auto;
     }
 
@@ -41,6 +46,7 @@
         url('https://i.pinimg.com/736x/75/54/bf/7554bffdd6d2fc2e87449e9fd235c1a1.jpg');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
     }
 
     h4 {
@@ -113,8 +119,8 @@
       display: inline-block;
       margin-top: 2rem;
       position: fixed;
-      left: 40px;
-      bottom: 40px;
+      left: 20px;
+      bottom: 20px;
       z-index: 100;
     }
 
@@ -132,8 +138,6 @@
       }
 
       .lado-esquerdo {
-        margin-left: auto;
-        margin-right: auto;
         padding: 2rem;
       }
 
