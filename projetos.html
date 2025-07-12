@@ -79,22 +79,41 @@
       font-size: 1.8rem;
     }
 
+    /* Lista estilo carrossel horizontal */
     .lista-projetos {
       display: flex;
       gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: #76b467 transparent;
+    }
+    /* Chrome, Edge, Safari */
+    .lista-projetos::-webkit-scrollbar {
+      height: 8px;
+    }
+    .lista-projetos::-webkit-scrollbar-thumb {
+      background-color: #76b467;
+      border-radius: 4px;
+    }
+    .lista-projetos::-webkit-scrollbar-track {
+      background: transparent;
     }
 
     .card-projeto {
-      display: block;
-      width: 80px;
-      height: 80px;
+      flex: 0 0 auto; /* não encolhe, largura fixa */
+      width: 180px;
+      height: 270px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
       overflow: hidden;
-      border: 2px solid white;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-      transition: transform 0.3s ease;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      background-color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .card-projeto img {
@@ -102,12 +121,14 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      border-radius: 12px;
+      pointer-events: none;
+      user-select: none;
     }
 
     .card-projeto:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px #76b467;
-      border-color: #76b467;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px #76b467;
     }
 
     /* RESPONSIVIDADE */
@@ -135,27 +156,23 @@
         font-size: 1.5rem;
       }
 
-      .lista-projetos {
-        justify-content: center;
-        gap: 1rem;
-      }
-
-      .card-projeto {
-        width: 70px;
-        height: 70px;
-      }
-
       .btn-voltar {
         margin-left: auto;
         margin-right: auto;
         display: inline-block;
       }
+
+      /* Cards um pouco menores no mobile */
+      .card-projeto {
+        width: 140px;
+        height: 210px;
+      }
     }
 
     @media (max-width: 400px) {
       .card-projeto {
-        width: 60px;
-        height: 60px;
+        width: 120px;
+        height: 180px;
       }
 
       .texto-projeto h2 {
