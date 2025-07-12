@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
@@ -42,6 +41,17 @@
 
     .loading-screen p {
       font-size: 1.2rem;
+    }
+
+    .pergunta {
+      font-size: 1.6rem;
+      color: white;
+      margin: 2rem 0 1rem;
+      text-align: center;
+    }
+
+    .conteudo {
+      padding-top: 5rem;
     }
   </style>
 </head>
@@ -116,8 +126,12 @@
           e.preventDefault();
           const url = card.getAttribute('data-link');
           const loading = document.getElementById('loading-screen');
-          loading.style.opacity = '1';
-          loading.style.pointerEvents = 'auto';
+          card.querySelector('.card-img')?.classList.add('zoomed'); // anima puxar pra frente
+
+          setTimeout(() => {
+            loading.style.opacity = '1';
+            loading.style.pointerEvents = 'auto';
+          }, 300); // depois da animação do zoom
 
           setTimeout(() => {
             window.location.href = url;
@@ -126,6 +140,14 @@
       });
     });
   </script>
+
+  <style>
+    /* Zoom na imagem do card ao clicar */
+    .card-img.zoomed {
+      transform: scale(1.2);
+      transition: transform 0.3s ease;
+    }
+  </style>
 
 </body>
 </html>
