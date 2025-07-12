@@ -16,7 +16,6 @@
     .secao-contato {
       display: flex;
       height: 100vh;
-      flex-direction: row;
     }
 
     .lado-esquerdo {
@@ -31,7 +30,6 @@
     .lado-esquerdo h4 {
       color: gray;
       margin-bottom: 0.5rem;
-      font-size: 1rem;
     }
 
     .lado-esquerdo h2 {
@@ -43,12 +41,10 @@
       color: #76b467;
       margin-bottom: 2rem;
       font-weight: bold;
-      font-size: 0.95rem;
     }
 
     .lado-esquerdo p {
       line-height: 1.7;
-      font-size: 1rem;
     }
 
     .btn-voltar {
@@ -58,12 +54,12 @@
       color: black;
       padding: 0.7rem 1.5rem;
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
       font-weight: bold;
       text-decoration: none;
       transition: background-color 0.3s ease;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
     .btn-voltar:hover {
@@ -72,21 +68,7 @@
 
     .lado-direito {
       flex: 1;
-      position: relative;
       background: url('https://i.pinimg.com/736x/55/96/44/5596443b4c52cd97eecbb381a5da80ae.jpg') no-repeat center center/cover;
-    }
-
-    .lado-direito::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.4); /* leve escurecimento da imagem */
-    }
-
-    @media (max-width: 1024px) {
-      .lado-esquerdo {
-        padding: 3rem;
-      }
     }
 
     @media (max-width: 768px) {
@@ -100,26 +82,7 @@
       }
 
       .lado-direito {
-        height: 250px;
-      }
-
-      .lado-esquerdo {
-        padding: 2rem;
-        text-align: center;
-        align-items: center;
-      }
-
-      .lado-esquerdo h2 {
-        font-size: 2rem;
-      }
-
-      .lado-esquerdo p {
-        font-size: 0.95rem;
-      }
-
-      .btn-voltar {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
+        height: 300px;
       }
     }
   </style>
