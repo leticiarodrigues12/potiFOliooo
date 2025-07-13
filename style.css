@@ -44,7 +44,7 @@ body {
   100% { transform: scale(1); }
 }
 
-/* Cabeçalho fixo */
+/* Cabeçalho com linha vermelha */
 .header {
   position: fixed;
   top: 0;
@@ -55,7 +55,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 999;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 3px solid red; /* Linha vermelha */
 }
 .logo-texto {
   color: red;
