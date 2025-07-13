@@ -14,8 +14,8 @@
 
     .secao-contato {
       display: flex;
-      flex-direction: row;
       height: 100vh;
+      flex-direction: row;
     }
 
     .lado-esquerdo {
@@ -77,12 +77,6 @@
         height: auto;
       }
 
-      .lado-direito {
-        width: 100%;
-        height: 250px;
-        background-position: center;
-      }
-
       .lado-esquerdo {
         width: 100%;
         padding: 2rem 1.5rem;
@@ -112,12 +106,17 @@
         font-size: 1rem;
         margin-top: 2rem;
       }
+
+      .lado-direito {
+        width: 100%;
+        height: 250px;
+        background-position: center;
+      }
     }
   </style>
 </head>
 <body>
   <section class="secao-contato">
-    <div class="lado-direito"></div> <!-- Agora vem primeiro no mobile -->
     <div class="lado-esquerdo">
       <h4>Letflix Original</h4>
       <h2>CONTATOS</h2>
@@ -130,6 +129,7 @@
       </p>
       <a href="index.html" class="btn-voltar">Voltar ao Início</a>
     </div>
+    <div class="lado-direito"></div>
   </section>
 </body>
 </html>
