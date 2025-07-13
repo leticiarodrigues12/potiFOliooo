@@ -55,7 +55,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 999;
-  border-bottom: 3px solid red; /* Linha vermelha */
+  border-bottom: 3px solid red !important; /* Linha vermelha */
 }
 .logo-texto {
   color: red;
